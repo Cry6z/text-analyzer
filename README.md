@@ -1,5 +1,5 @@
 # Text Analyzer
-Program Lua pertama saya level up LESGO! 🎉  
+Program Lua pertama saya level up LESGO! 
 (Upgrade)
 
 ## Fitur Baru
@@ -18,20 +18,8 @@ Program Lua pertama saya level up LESGO! 🎉
    - Tekan Enter di baris kosong untuk selesai memasukkan teks.  
    - Ketik `/keluar` kapan saja untuk berhenti.
 4. Jawab `y` jika ingin analisis lagi.
-=======
-program Lua pertama saya LESGO!
 
-## jalankan :
-1. install Lua.
-2. jalankan perintah berikut di terminal vcsode :
-   ```bash
-   lua main.lua
-   ```
-3. ketik teks dan tekan enter.
->>>>>>> 16a9667928e70a84b96fe354b54dcbddb59eb121
-
-## contoh : 
-```
+## Contoh :
 ╔══════════════════════════════════════════════════════╗
 ║                TEXT ANALYZER TERMINAL                ║
 ╚══════════════════════════════════════════════════════╝

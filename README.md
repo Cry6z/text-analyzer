@@ -20,6 +20,7 @@ Program Lua pertama saya level up LESGO!
 4. Jawab `y` jika ingin analisis lagi.
 
 ## Contoh :
+```
 ╔══════════════════════════════════════════════════════╗
 ║                TEXT ANALYZER TERMINAL                ║
 ╚══════════════════════════════════════════════════════╝

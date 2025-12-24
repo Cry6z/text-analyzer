@@ -1,6 +1,4 @@
-# text analyzer
-
-<<<<<<< HEAD
+# Text Analyzer
 Program Lua pertama saya level up LESGO! 🎉  
 (Upgrade)
 

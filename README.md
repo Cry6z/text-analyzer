@@ -2,7 +2,7 @@
 
 program Lua pertama saya LESGO!
 
-## Cara Menjalankan
+## jalankan :
 1. install Lua.
 2. jalankan perintah berikut di terminal vcsode :
    ```bash

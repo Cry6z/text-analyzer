@@ -13,10 +13,10 @@ Program Lua pertama saya LESGO!
 ## Contoh Output
 ```
 text analyzer
-masukkan teks: saya suka belajar lua
+masukkan teks: gibran suka makan etanol
 
 hasil
-jumlah karakter : 22
+jumlah karakter : 24
 jumlah kata     : 4
-kata terpanjang : belajar
+kata terpanjang : gibran
 ```

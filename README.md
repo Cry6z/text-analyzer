@@ -1,16 +1,16 @@
-# Text Analyzer
+# text analyzer
 
-Program Lua pertama saya LESGO!
+program Lua pertama saya LESGO!
 
 ## Cara Menjalankan
-1. Install Lua.
-2. Jalankan perintah berikut di terminal vcsode :
+1. install Lua.
+2. jalankan perintah berikut di terminal vcsode :
    ```bash
    lua main.lua
    ```
-3. Ketik teks dan tekan enter.
+3. ketik teks dan tekan enter.
 
-## Contoh Output
+## contoh : 
 ```
 text analyzer
 masukkan teks: gibran suka makan etanol

@@ -44,6 +44,18 @@ Project Lua yang saya buat karena gabut LESGO!
 
 ---
 
+## Screenshot
+
+| Mode | Tampilan | Keterangan |
+| --- | --- | --- |
+
+| Web UI | ![Web Screenshot]<img width="1090" height="702" alt="Screenshot 2025-12-30 102110" src="https://github.com/user-attachments/assets/bb376cef-b994-4bb8-8e10-eabf9d468598" />
+||
+| CLI Dashboard | ![CLI Screenshot]<img width="1920" height="1080" alt="Screenshot 2025-12-30 102226" src="https://github.com/user-attachments/assets/ddf36f70-eb19-441b-b5bc-89d151b455ba" />
+||
+
+---
+
 ## Cara Menjalankan
 
 ### 1. Versi Web

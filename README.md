@@ -1,36 +1,33 @@
 # Text Analyzer
 Program Lua pertama saya level up LESGO! 🎉  
-(Upgrade)
+Sekarang hadir versi web modern dan mode terminal klasik.
 
-## Fitur Baru
-- UI terminal bergaya dashboard.
-- Input multi-baris (tekan Enter kosong untuk mengakhiri input, ketik `/keluar` untuk keluar).
-- Statistik lengkap: karakter, karakter tanpa spasi, jumlah kata unik, kata terpanjang/terpendek, rata-rata panjang kata.
-- Visualisasi top 5 kata paling sering muncul.
+## Fitur Utama
+- UI web berbasis HTML/CSS dengan tema neon dan visual top 5 kata.
+- Input teks multi-baris, hotkey Ctrl+Enter untuk analisis, tombol Reset instan.
+- Statistik lengkap: karakter total, tanpa spasi, jumlah kata, kata unik, kata terpanjang/terpendek, rata-rata panjang kata.
+- Mode terminal dashboard sebagai fallback untuk lingkungan tanpa browser modern.
 
 ## Cara Menjalankan
-1. Pastikan Lua sudah terpasang.
-2. Jalankan program:
+
+### 1. Versi Web (disarankan)
+1. Buka file `index.html` langsung di browser modern (Chrome, Edge, Firefox) atau pakai Live Server.
+2. Ketik/paste teks di panel kiri.
+3. Klik **Analisis sekarang** atau tekan **Ctrl+Enter**.
+4. Lihat statistik dan grafik batang top 5 kata di panel kanan.
+
+### 2. Versi Terminal
+1. Pastikan Lua terpasang.
+2. Jalankan:
    ```bash
    lua main.lua
    ```
-3. Ketik kalimatmu.  
-   - Tekan Enter di baris kosong untuk selesai memasukkan teks.  
-   - Ketik `/keluar` kapan saja untuk berhenti.
+3. Ketik teksmu.
+   - Enter kosong mengakhiri input.
+   - Ketik `/keluar` atau `/exit` kapan saja untuk berhenti.
 4. Jawab `y` jika ingin analisis lagi.
-=======
-program Lua pertama saya LESGO!
 
-## jalankan :
-1. install Lua.
-2. jalankan perintah berikut di terminal vcsode :
-   ```bash
-   lua main.lua
-   ```
-3. ketik teks dan tekan enter.
->>>>>>> 16a9667928e70a84b96fe354b54dcbddb59eb121
-
-## contoh : 
+## Contoh (mode terminal)
 ```
 ╔══════════════════════════════════════════════════════╗
 ║                TEXT ANALYZER TERMINAL                ║

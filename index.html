@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+    <header class="heading">
+        <h1>Text Analyzer Studio</h1>
+        <p>Analisis teks Anda dalam sekali klik. Visual statistik, highlight kata populer, dan desain modern.</p>
+        <div class="pill-row">
+            <div class="pill">⌨️ Ctrl + Enter untuk analisis</div>
+            <div class="pill">🪄 Total karakter & kata</div>
+            <div class="pill">📊 Top 5 kata terpopuler</div>
+        </div>
+    </header>
+
+    <section class="workspace">
+        <div class="panel" id="input-panel">
+            <h2>Masukkan teks</h2>
+            <textarea id="text-input" placeholder="Tulis cerita menarikmu di sini..."></textarea>
+            <p class="helper-text">Tips: paste teks dari clipboard (Ctrl + V) atau ketik manual. Klik Analisis untuk melihat ringkasan.</p>
+            <div class="actions">
+                <button class="btn-primary" id="analyze-btn">Analisis sekarang</button>
+                <button class="btn-secondary" id="reset-btn">Reset</button>
+            </div>
+            <div class="status" id="status-text">Belum ada analisis.</div>
+        </div>
+
+        <div class="panel" id="output-panel">
+            <h2>Ringkasan statistik</h2>
+            <div class="stats-grid" id="stats-grid">
+                <div class="stat-card"><span>Jumlah karakter</span><p id="stat-char">0</p></div>
+                <div class="stat-card"><span>Karakter tanpa spasi</span><p id="stat-char-nospace">0</p></div>
+                <div class="stat-card"><span>Jumlah kata</span><p id="stat-words">0</p></div>
+                <div class="stat-card"><span>Kata unik</span><p id="stat-unique">0</p></div>
+                <div class="stat-card"><span>Kata terpanjang</span><p id="stat-longest">-</p></div>
+                <div class="stat-card"><span>Kata terpendek</span><p id="stat-shortest">-</p></div>
+                <div class="stat-card"><span>Rata-rata panjang kata</span><p id="stat-average">0</p></div>
+            </div>
+
+            <div class="top-words">
+                <h3>Top 5 kata terbanyak</h3>
+                <ul class="top-list" id="top-list"></ul>
+            </div>
+
+            <div class="empty-state" id="empty-state">Masukkan teks untuk melihat visualisasi kata populer.</div>
+        </div>
+    </section>
+</div>
+
+<script>
+    const textInput = document.getElementById('text-input');
+    const statusText = document.getElementById('status-text');
+    const analyzeBtn = document.getElementById('analyze-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const emptyState = document.getElementById('empty-state');
+    const topList = document.getElementById('top-list');
+
+    const statRefs = {
+        char: document.getElementById('stat-char'),
+        charNoSpace: document.getElementById('stat-char-nospace'),
+        words: document.getElementById('stat-words'),
+        unique: document.getElementById('stat-unique'),
+        longest: document.getElementById('stat-longest'),
+        shortest: document.getElementById('stat-shortest'),
+        average: document.getElementById('stat-average')
+    };
+
+    function sanitizeWord(word) {
+        return word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+    }
+
+    function analyze(text) {
+        const stats = {
+            charCount: text.length,
+            charCountNoSpace: text.replace(/\s+/g, '').length,
+            wordCount: 0,
+            uniqueWordCount: 0,
+            longestWord: '',
+            shortestWord: '',
+            averageWordLength: 0,
+            topWords: []
+        };
+
+        const frequency = new Map();
+        let totalLength = 0;
+
+        text.split(/\s+/).forEach(raw => {
+            if (!raw) return;
+            const cleaned = sanitizeWord(raw);
+            if (!cleaned) return;
+
+            const lowered = cleaned.toLowerCase();
+            const entry = frequency.get(lowered) || { word: cleaned, count: 0 };
+            entry.count += 1;
+            entry.word = cleaned;
+            frequency.set(lowered, entry);
+
+            stats.wordCount += 1;
+            totalLength += cleaned.length;
+
+            if (cleaned.length > stats.longestWord.length) {
+                stats.longestWord = cleaned;
+            }
+
+            if (stats.shortestWord === '' || cleaned.length < stats.shortestWord.length) {
+                stats.shortestWord = cleaned;
+            }
+        });
+
+        stats.uniqueWordCount = frequency.size;
+        stats.averageWordLength = stats.wordCount ? (totalLength / stats.wordCount) : 0;
+        stats.topWords = Array.from(frequency.values())
+            .sort((a, b) => b.count - a.count || a.word.localeCompare(b.word))
+            .slice(0, 5);
+
+        return stats;
+    }
+
+    function renderStats(stats) {
+        statRefs.char.textContent = stats.charCount;
+        statRefs.charNoSpace.textContent = stats.charCountNoSpace;
+        statRefs.words.textContent = stats.wordCount;
+        statRefs.unique.textContent = stats.uniqueWordCount;
+        statRefs.longest.textContent = stats.longestWord || '-';
+        statRefs.shortest.textContent = stats.shortestWord || '-';
+        statRefs.average.textContent = stats.wordCount ? stats.averageWordLength.toFixed(2) : '0';
+
+        topList.innerHTML = '';
+        if (stats.topWords.length === 0) {
+            emptyState.style.display = 'block';
+            return;
+        }
+
+        emptyState.style.display = 'none';
+        const maxCount = stats.topWords[0].count || 1;
+
+        stats.topWords.forEach(({ word, count }) => {
+            const li = document.createElement('li');
+
+            const label = document.createElement('span');
+            label.className = 'word-label';
+            label.textContent = word;
+
+            const track = document.createElement('div');
+            track.className = 'bar-track';
+
+            const bar = document.createElement('div');
+            bar.className = 'bar-value';
+            bar.style.width = `${(count / maxCount) * 100}%`;
+            track.appendChild(bar);
+
+            const amount = document.createElement('span');
+            amount.className = 'count';
+            amount.textContent = `${count}x`;
+
+            li.append(label, track, amount);
+            topList.appendChild(li);
+        });
+    }
+
+    function runAnalysis() {
+        const text = textInput.value;
+        if (!text.trim()) {
+            statusText.innerHTML = 'Tambahkan <strong>minimal satu kata</strong> sebelum analisis.';
+            renderStats({ charCount: 0, charCountNoSpace: 0, wordCount: 0, uniqueWordCount: 0, longestWord: '', shortestWord: '', averageWordLength: 0, topWords: [] });
+            topList.innerHTML = '';
+            emptyState.style.display = 'block';
+            return;
+        }
+
+        const stats = analyze(text);
+        renderStats(stats);
+        const time = new Date().toLocaleTimeString('id-ID');
+        statusText.innerHTML = `Analisis selesai pada <strong>${time}</strong>.`;
+    }
+
+    analyzeBtn.addEventListener('click', runAnalysis);
+
+    resetBtn.addEventListener('click', () => {
+        textInput.value = '';
+        topList.innerHTML = '';
+        emptyState.style.display = 'block';
+        statusText.textContent = 'Input dihapus. Belum ada analisis.';
+        renderStats({ charCount: 0, charCountNoSpace: 0, wordCount: 0, uniqueWordCount: 0, longestWord: '', shortestWord: '', averageWordLength: 0, topWords: [] });
+    });
+
+    textInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
+            event.preventDefault();
+            runAnalysis();
+        }
+    });
+</script>
+</body>
+</html>

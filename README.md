@@ -48,8 +48,8 @@ Project Lua yang saya buat karena gabut LESGO!
 
 | Mode | Tampilan | Keterangan |
 | --- | --- | --- |
-| Web UI | <img src="https://github.com/user-attachments/assets/bb376cef-b994-4bb8-8e10-eabf9d468598" alt="Tampilan web Text Analyzer" width="640" /> | Panel input di kiri, statistik & grafik batang Top 5 kata di kanan. |
-| CLI Dashboard | <img src="https://github.com/user-attachments/assets/ddf36f70-eb19-441b-b5bc-89d151b455ba" alt="Dashboard CLI Text Analyzer" width="640" /> | Dashboard ASCII dengan statistik lengkap dan perintah `/keluar`. |
+| Web UI | <img src="https://github.com/user-attachments/assets/ddf36f70-eb19-441b-b5bc-89d151b455ba" alt="Dashboard Web Text Analyzer" width="640" /> | Panel input di kiri, statistik & grafik batang Top 5 kata di kanan. |
+| CLI Dashboard | <img src="https://github.com/user-attachments/assets/bb376cef-b994-4bb8-8e10-eabf9d468598" alt="Tampilan CLI Text Analyzer" width="640" /> | Dashboard ASCII dengan statistik lengkap dan perintah `/keluar`. |
 
 ---
 

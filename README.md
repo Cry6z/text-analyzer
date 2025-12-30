@@ -1,7 +1,14 @@
-# Text Analyzer Lua
-## Project Lua pertama saya LESGO!
-Program **Text Analyzer** berbasis **Lua** dengan dua mode penggunaan:  
-**Web (HTML/CSS)** dan **Terminal (CLI Dashboard)**.  
+# Text Analyzer (Lua)
+
+Project Lua yang saya buat karena gabut LESGO!
+
+---
+
+## Gambaran Cepat
+- Analisis teks multi-baris dengan statistik lengkap
+- Dua mode penggunaan: browser (HTML/CSS) dan CLI
+- Visualisasi Top 5 kata paling sering muncul
+- Bisa analisis ulang tanpa perlu restart
 
 ---
 
@@ -9,57 +16,61 @@ Program **Text Analyzer** berbasis **Lua** dengan dua mode penggunaan:
 
 ### Umum
 - Analisis teks multi-baris
-- Statistik teks lengkap
-- Kode Lua rapi dan mudah dikembangkan
+- Statistik lengkap (kata, karakter, rata-rata panjang, unik, dll.)
+- Struktur kode modular, gampang diutak-atik
 
-### Web
-- UI web berbasis **HTML + CSS**
-- Input teks multi-baris
-- Tombol **Analisis Sekarang**
-- Shortcut **Ctrl + Enter**
-- Statistik real-time
-- Grafik batang **Top 5 kata terbanyak**
+### Mode Web
+- UI HTML + CSS yang responsif
+- Panel input teks luas
+- Tombol **Analisis Sekarang** + shortcut **Ctrl + Enter**
+- Statistik diperbarui real-time
+- Grafik batang interaktif untuk Top 5 kata
 
-### Terminal
-- Tampilan dashboard ASCII
-- Input teks bebas (multi-baris)
-- Perintah khusus:
-  - `/keluar` atau `/exit` → keluar program
-- Bisa analisis ulang tanpa restart program
+### Mode Terminal (CLI)
+- Dashboard ASCII dengan highlight yang rapi
+- Input multi-baris langsung dari terminal
+- Perintah cepat:
+  - `/keluar` atau `/exit` → tutup program
+- Bisa menjalankan analisis berulang tanpa keluar aplikasi
 
 ---
 
 ## Statistik yang Ditampilkan
-- Jumlah karakter (total)
-- Karakter tanpa spasi
-- Jumlah kata
-- Jumlah kata unik
-- Kata terpanjang
-- Kata terpendek
+- Jumlah karakter (dengan & tanpa spasi)
+- Jumlah kata & kata unik
+- Kata terpanjang dan terpendek
 - Rata-rata panjang kata
-- Top 5 kata paling sering muncul
+- Top 5 kata terpopuler
 
 ---
 
 ## Cara Menjalankan
 
-### Web
-1. Buka file `index.html` di browser modern  
-   *(Chrome / Edge / Firefox)*  
-   atau gunakan **Live Server** di VS Code.
-2. Ketik atau paste teks di panel kiri.
-3. Klik **Analisis Sekarang**  
-   atau tekan **Ctrl + Enter**.
-4. Hasil analisis dan grafik muncul di panel kanan.
+### 1. Versi Web
+1. Buka `index.html` di browser modern (Chrome / Edge / Firefox)  
+   atau pakai **Live Server** di VS Code.
+2. Ketik atau paste teks ke panel kiri.
+3. Tekan **Analisis Sekarang** atau shortcut **Ctrl + Enter**.
+4. Statistik dan grafik akan muncul di panel kanan.
+
+### 2. Versi Terminal (CLI)
+
+#### Persiapan
+- Install **Lua**
+- Pastikan perintah `lua` sudah ada di PATH
+
+#### Menjalankan Program
+```bash
+lua main.lua
+```
+
+Masukkan teksmu, tekan Enter dua kali untuk mengakhiri input, lalu lihat hasil analisisnya.
 
 ---
 
-### Terminal (CLI)
+## Tech Stack
+- **Lua** 
+- **HTML + CSS** 
+- **Vanilla JS**
 
-#### 🔧 Persiapan
-- Install **Lua**
-- Pastikan Lua sudah terdaftar di PATH
-
-#### ▶ Menjalankan Program
-```bash
-lua main.lua
+---

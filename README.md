@@ -1,5 +1,5 @@
 # Text Analyzer Lua
-Project Lua pertama saya LESGO!
+## Project Lua pertama saya LESGO!
 Program **Text Analyzer** berbasis **Lua** dengan dua mode penggunaan:  
 **Web (HTML/CSS)** dan **Terminal (CLI Dashboard)**.  
 

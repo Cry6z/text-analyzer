@@ -29,7 +29,7 @@ Program **Text Analyzer** berbasis **Lua** dengan dua mode penggunaan:
 
 ---
 
-##Statistik yang Ditampilkan
+## Statistik yang Ditampilkan
 - Jumlah karakter (total)
 - Karakter tanpa spasi
 - Jumlah kata
@@ -43,7 +43,7 @@ Program **Text Analyzer** berbasis **Lua** dengan dua mode penggunaan:
 
 ## Cara Menjalankan
 
-### Versi Web
+### Web
 1. Buka file `index.html` di browser modern  
    *(Chrome / Edge / Firefox)*  
    atau gunakan **Live Server** di VS Code.
@@ -54,7 +54,7 @@ Program **Text Analyzer** berbasis **Lua** dengan dua mode penggunaan:
 
 ---
 
-### Versi Terminal (CLI)
+### Terminal (CLI)
 
 #### 🔧 Persiapan
 - Install **Lua**

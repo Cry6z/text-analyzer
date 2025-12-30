@@ -1,47 +1,65 @@
-# Text Analyzer
-Program Lua pertama saya level up LESGO! 
-(Upgrade)
+# Text Analyzer Lua
+Project Lua pertama saya LESGO!
+Program **Text Analyzer** berbasis **Lua** dengan dua mode penggunaan:  
+**Web (HTML/CSS)** dan **Terminal (CLI Dashboard)**.  
 
-## Fitur Baru
-- UI terminal bergaya dashboard.
-- Input multi-baris (tekan Enter kosong untuk mengakhiri input, ketik `/keluar` untuk keluar).
-- Statistik lengkap: karakter, karakter tanpa spasi, jumlah kata unik, kata terpanjang/terpendek, rata-rata panjang kata.
-- Visualisasi top 5 kata paling sering muncul.
+---
+
+## Fitur Utama
+
+### Umum
+- Analisis teks multi-baris
+- Statistik teks lengkap
+- Kode Lua rapi dan mudah dikembangkan
+
+### Web
+- UI web berbasis **HTML + CSS**
+- Input teks multi-baris
+- Tombol **Analisis Sekarang**
+- Shortcut **Ctrl + Enter**
+- Statistik real-time
+- Grafik batang **Top 5 kata terbanyak**
+
+### Terminal
+- Tampilan dashboard ASCII
+- Input teks bebas (multi-baris)
+- Perintah khusus:
+  - `/keluar` atau `/exit` → keluar program
+- Bisa analisis ulang tanpa restart program
+
+---
+
+##Statistik yang Ditampilkan
+- Jumlah karakter (total)
+- Karakter tanpa spasi
+- Jumlah kata
+- Jumlah kata unik
+- Kata terpanjang
+- Kata terpendek
+- Rata-rata panjang kata
+- Top 5 kata paling sering muncul
+
+---
 
 ## Cara Menjalankan
-1. Pastikan Lua sudah terpasang.
-2. Jalankan program:
-   ```bash
-   lua main.lua
-   ```
-3. Ketik kalimatmu.  
-   - Tekan Enter di baris kosong untuk selesai memasukkan teks.  
-   - Ketik `/keluar` kapan saja untuk berhenti.
-4. Jawab `y` jika ingin analisis lagi.
 
-## Contoh :
-```
-╔══════════════════════════════════════════════════════╗
-║                TEXT ANALYZER TERMINAL                ║
-╚══════════════════════════════════════════════════════╝
-Tips: Enter kosong selesai input, /keluar untuk mengakhiri program.
-Contoh input: gibran suka minum ethanol bersama ilham
-──────────────────────────────────────────────────────────────
-Ringkasan Statistik
-──────────────────────────────────────────────────────────────
-Jumlah karakter           39
-Karakter tanpa spasi      34
-Jumlah kata               6
-Jumlah kata unik          6
-Rata-rata panjang kata    5.67
-Kata terpanjang           ethanol
-Kata terpendek            suka
-──────────────────────────────────────────────────────────────
-Top kata yang sering muncul
-  bersama          ███ (1x)
-  ethanol          ███ (1x)
-  gibran           ███ (1x)
-  ilham            ███ (1x)
-  minum            ███ (1x)
-──────────────────────────────────────────────────────────────
-```
+### Versi Web
+1. Buka file `index.html` di browser modern  
+   *(Chrome / Edge / Firefox)*  
+   atau gunakan **Live Server** di VS Code.
+2. Ketik atau paste teks di panel kiri.
+3. Klik **Analisis Sekarang**  
+   atau tekan **Ctrl + Enter**.
+4. Hasil analisis dan grafik muncul di panel kanan.
+
+---
+
+### Versi Terminal (CLI)
+
+#### 🔧 Persiapan
+- Install **Lua**
+- Pastikan Lua sudah terdaftar di PATH
+
+#### ▶ Menjalankan Program
+```bash
+lua main.lua

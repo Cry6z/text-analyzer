@@ -1,6 +1,6 @@
 # Text Analyzer (Lua)
 
-Project Lua yang saya buat karena gabut LESGO!
+Project Lua pertama saya 
 
 ---
 
